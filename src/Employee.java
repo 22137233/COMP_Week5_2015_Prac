@@ -1,57 +1,118 @@
-/**
- * Week 5 practical code. Not to be used without permission and appropriate
- * referencing
- */
-
 public class Employee {
-  private int staffID;              // employee unique identifier
+  private int getEmployeeId;
   private String firstName;
-  private String surname;
-  private String address;           // home address
-  private double annualLeave;       // accrued annual leave available (hours)
-  private double longServiceLeave;  // accrued long service leave available (hours)
+  private String getLastName;
+  private String getAddress;
+  private double getAnnualLeaveHours;
+  private double getLongServiceLeaveHours;
 
-  /**
-   * @return staff Identification number
-   */
-  public int getStaffID() {
-    return staffID;
+  // Constructors
+  public Employee() {
+      this(-1, "Unknown", "Unknown", null, 0.0, 0.0);
   }
 
-
-  /**
-   * @param ID - The new employees staff identification number
-   */
-  public void setStaffID(int ID) {
-    staffID = ID;
+  public Employee(int getEmployeeId, String firstName, String getLastName, String getAddress,
+                  double getAnnualLeaveHours, double getLongServiceLeaveHours) {
+      this.getEmployeeId = getEmployeeId;
+      this.firstName = firstName;
+      this.getLastName = getLastName;
+      this.getAddress = getAddress;
+      this.getAnnualLeaveHours = getAnnualLeaveHours;
+      this.getLongServiceLeaveHours = getLongServiceLeaveHours;
   }
 
+  // Getters and Setters (omitted for brevity)
 
-
-  /**
-   * Determines if the employee has sufficient accrued leave to cover the
-   * requested number of hours of leave.
-   *
-   * @param leaveType
-   *          – the type of leave requested. A = Annual, L = long service
-   * @param requestedHours
-   *          – the number of hours of leave requested by the employee
-   * @return true if leave is approved, false otherwise
-   */
-  public boolean requestLeave(char leaveType, double requestedHours) {
-    if (leaveType == 'A') {
-      if (annualLeave > requestedHours) {
-        return true;
-      } else {
-        return false;
+  // Methods
+  public boolean canTakeLeave(LeaveType leaveType, double requestedHours) {
+      if (requestedHours <= 0) {
+          throw new IllegalArgumentException("Requested hours must be positive.");
       }
-    } else {
-      if (longServiceLeave > requestedHours) {
-        return true;
-      } else {
-        return false;
+
+      switch (leaveType) {
+          case ANNUAL:
+              if (getAnnualLeaveHours >= requestedHours) {
+                  getAnnualLeaveHours -= requestedHours;
+                  return true;
+              }
+              break;
+          case LONG_SERVICE:
+              if (getLongServiceLeaveHours >= requestedHours) {
+                  getLongServiceLeaveHours -= requestedHours;
+                  return true;
+              }
+              break;
+          default:
+              throw new IllegalArgumentException("Invalid leave type.");
       }
-    }
+
+      return false;
   }
-  
-} // end Employee class
+
+  // Enum to represent leave types
+  public enum LeaveType {
+      ANNUAL,
+      LONG_SERVICE
+  }
+
+  public String getFirstName() {
+    return null;
+  }
+
+public String getEmployeeId() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public String getLastName() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public String getAddress() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public String getAnnualLeavHour() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+
+
+public String getLongServiceLeaveHours1() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public void setAnnualLeaveHours(double d) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+public String getLongServiceLeaveHours() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+
+public void setAnnualLeaveHours1(double d) {
+	// TODO Auto-generated method stub
+	
+}
+
+public boolean requestLeave1(char leaveType, double hoursRequested) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+public boolean requestLeave(char leaveType, double hoursRequested) {
+	// TODO Auto-generated method stub
+	return false;
+}
+}
