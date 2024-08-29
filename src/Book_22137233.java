@@ -1,24 +1,21 @@
 import java.time.LocalDate;
-public class Book {
+public class Book_22137233 {
     private String title;
     private String author;
     private String isbn;
-    private boolean available; // Using "available" instead of "isAvailable" for a slight variation
-    private String borrowerName; // Tracks who borrowed the book (null if available)
-    private LocalDate borrowDate; // Tracks borrow date (null if available)
+    private boolean available; 
+    private String borrowerName; 
+    private LocalDate borrowDate; 
 
-    // Constructor with all attributes
-    public Book(String title, String author, String isbn) {
+    // Constructor 
+    public Book_22137233(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.available = true; // Default availability
+        this.available = true; 
     }
 
-    // Getter and setter methods (unchanged for brevity)
-    // ...
-
-    // Method to check out the book, handling unavailable scenarios
+    
     public boolean checkout(String borrowerName) {
         if (available) {
             this.available = false;
@@ -32,12 +29,12 @@ public class Book {
         }
     }
 
-    // Method to return the book, handling non-borrowed scenarios
+    // Method to return the book
     public boolean returnBook() {
         if (!available) {
             this.available = true;
             this.borrowerName = null;
-            this.borrowDate = null; // Clear borrow details
+            this.borrowDate = null; 
             System.out.println("The book \"" + title + "\" has been returned.");
             return true;
         } else {
@@ -46,7 +43,7 @@ public class Book {
         }
     }
 
-    // Method to display book details, including availability and borrow information (if applicable)
+    // Method to display book details
     public void displayDetails() {
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);

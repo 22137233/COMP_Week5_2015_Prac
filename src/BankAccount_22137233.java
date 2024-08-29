@@ -1,20 +1,20 @@
-public class BankAccount {
+public class BankAccount_22137233 {
     private double balance;
     private String accountNumber;
     private String accountHolderName;
 
-    // Constructor with initial balance and optional account holder name
-    public BankAccount(double initialBalance, String accountHolderName) {
+   
+    public BankAccount_22137233(double initialBalance, String accountHolderName) {
         validateBalance(initialBalance);
         this.balance = initialBalance;
-        // You can generate a unique account number here
+        //  generate a unique account number 
         this.accountNumber = generateAccountNumber();
         this.accountHolderName = accountHolderName;
     }
 
-    // Constructor with initial balance only
-    public BankAccount(double initialBalance) {
-        this(initialBalance, null); // Call the other constructor
+    // Constructor
+    public BankAccount_22137233(double initialBalance) {
+        this(initialBalance, null); // Call  constructor
     }
 
     private void validateBalance(double balance) {
@@ -51,9 +51,9 @@ public class BankAccount {
         return accountHolderName;
     }
 
-    // A simple method to generate a unique account number (you can replace this with a more sophisticated algorithm)
+    
     private String generateAccountNumber() {
-        // Replace with your desired account number generation logic
+       
         return "ACC" + (int) (Math.random() * 1000000);
     }
 }

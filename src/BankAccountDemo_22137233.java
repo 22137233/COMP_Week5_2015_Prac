@@ -1,7 +1,7 @@
-public class BankAccountDemo {
+public class BankAccountDemo_22137233 {
     public static void main(String[] args) {
         // Create a BankAccount with an initial balance and account holder name
-        BankAccount account1 = new BankAccount(1000.0, "John Doe");
+        BankAccount_22137233 account1 = new BankAccount_22137233(1000.0, "John Doe");
 
         // Display account details
         System.out.println("Account 1 Details:");
@@ -17,7 +17,7 @@ public class BankAccountDemo {
         System.out.println("After withdrawing $200: $" + account1.getBalance());
 
         // Create a BankAccount with only an initial balance
-        BankAccount account2 = new BankAccount(500.0);
+        BankAccount_22137233 account2 = new BankAccount_22137233(500.0);
 
         // Display account details
         System.out.println("\nAccount 2 Details:");
